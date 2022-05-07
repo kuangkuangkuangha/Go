@@ -13,4 +13,3 @@ func Register(name string, password string, avatar string) string {
 
 	return user.Username
 }
-

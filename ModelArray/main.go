@@ -1,21 +1,33 @@
 package main
 
-import "fmt"
+// expected boolean expression, found assignment (missing parentheses around composite literal?)
 
-type student struct {
-	id   int
-	name string
+type ListNode struct {
+	Val  int
+	Next *ListNode
 }
 
-func main() {
-	var clus []student
-
-	stu1 := student{
-		id:   1,
-		name: "zhangkuang",
+func isPalindrome(head *ListNode) bool {
+	// 当只有一个元素时
+	if head.Next == nil {
+		return true
 	}
 
-	clus = append(clus, stu1)
+	// 有两个元素及以上
+	var a []int
+	temp := head
 
-	fmt.Println(clus[0])
+	for temp != nil {
+		a = append(a, temp.Val)
+		temp = temp.Next
+	}
+
+	lenth := len(a)
+	for i := 0; i < lenth/2; i++ {
+		if a[i] != a[lenth-i-1] {
+			return false
+		}
+	}
+
+	return true
 }

@@ -18,7 +18,7 @@ func main() {
 		panic(err)
 	}
 	defer db.Close()
-	
-	a := User{ Username:"库里",Password: "2020213719",Avatar:"curry"}
+
+	a := User{Username: "库里", Password: "2020213719", Avatar: "curry"}
 	db.Create(&a)
 }

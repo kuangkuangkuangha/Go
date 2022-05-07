@@ -15,6 +15,7 @@ var err error
 func InitDB() *gorm.DB {
 	DB, err = gorm.Open("mysql", "root:zk2824895143@(localhost)/user?charset=utf8mb4&parseTime=True&loc=Local")
 	if err != nil {
+		fmt.Println("yes")
 		fmt.Println(err)
 	}
 	//defer DB.Close()
